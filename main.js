@@ -62,7 +62,7 @@ function playGame() {
     }
 
     if (userScore > computerScore) {
-        console.log(`Your score is ${userScore} and mine is ${computerScore}. Well, that means you got lucky ☹️ `);
+        console.log(`Your score is ${userScore} and mine is ${computerScore}. Well, that means you got lucky 😩`);
     }
     else if (userScore < computerScore) {
         console.log(`Your score is ${userScore} and mine is ${computerScore}. Look at you, crying baby! I am always winner!!! 🤣`);
