@@ -2,4 +2,4 @@
 
 ## The Odin Project
 
-Just open console in your browser and play
+Just open console in your browser, reload page and play
