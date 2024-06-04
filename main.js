@@ -1,5 +1,5 @@
 const variation = ["rock", "paper", "scissors"];
-let humanScore = 0;
+let userScore = 0;
 let computerScore = 0;
 
 function getComputerChoice() {
@@ -26,3 +26,29 @@ function getUserChoice() {
     }
 }
 
+function playRound(humanChoice, computerChoice) {
+    if (computerChoice === humanChoice) {
+        console.log("It's draw!!! No one is winner! 🤔");
+    }
+    else if (computerChoice === "rock" && humanChoice === "scissors") {
+        console.log(`Computer chose ${computerChoice}, you chose ${humanChoice} and lose! He-he-he 🤣`);
+        computerScore += 1;
+    }
+    else if (computerChoice === "paper" && humanChoice === "rock") {
+        console.log(`Computer chose ${computerChoice}, you chose ${humanChoice} and lose! He-he-he 🤣`);
+        computerScore += 1;
+    }
+    else if (computerChoice === "scissors" && humanChoice === "paper") {
+        console.log(`Computer chose ${computerChoice}, you chose ${humanChoice} and lose! He-he-he 🤣`);
+        computerScore += 1;
+    }
+    else {
+        console.log(`Computer chose ${computerChoice}, you chose ${humanChoice}. You win, whatever 😞`);
+        userScore += 1;
+    }
+}
+
+const userSelection = getUserChoice();
+const computerSelection = getComputerChoice();
+
+playRound(userSelection, computerSelection);
