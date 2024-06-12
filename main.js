@@ -19,6 +19,17 @@ function playGame() {
     buttonsBlock.append(rockButton, paperButton, scissorsButton);
     body.append(buttonsBlock);
 
+    rockButton.addEventListener("click", () => {
+        playRound("rock");
+    });
+    paperButton.addEventListener("click", () => {
+        playRound("paper");
+    });
+    scissorsButton.addEventListener("click", () => {
+        playRound("scissor");
+    })
+
+
     function playRound(humanChoice) {
         let computerChoice = getComputerChoice();
 
