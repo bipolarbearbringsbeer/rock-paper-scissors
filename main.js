@@ -4,6 +4,21 @@ function playGame() {
     let userScore = 0;
     let computerScore = 0;
 
+    // UI implementation
+    const body = document.querySelector("body");
+    const buttonsBlock = document.createElement("div");
+    const rockButton = document.createElement("button");
+    const paperButton = document.createElement("button");
+    const scissorsButton = document.createElement("button");
+
+    buttonsBlock.classList.add("buttons-block");
+    rockButton.textContent = "Rock";
+    paperButton.textContent = "Paper";
+    scissorsButton.textContent = "Scissors";
+
+    buttonsBlock.append(rockButton, paperButton, scissorsButton);
+    body.append(buttonsBlock);
+
     function playRound(humanChoice) {
         let computerChoice = getComputerChoice();
 
@@ -64,18 +79,3 @@ function printResult(userScore, computerScore) {
 }
 
 playGame();
-
-// UI implementation
-const body = document.querySelector("body");
-const buttonsBlock = document.createElement("div");
-const rockButton = document.createElement("button");
-const paperButton = document.createElement("button");
-const scissorsButton = document.createElement("button");
-
-buttonsBlock.classList.add("buttons-block")
-rockButton.textContent = "Rock";
-paperButton.textContent = "Paper";
-scissorsButton.textContent = "Scissors";
-
-buttonsBlock.append(rockButton, paperButton, scissorsButton);
-body.append(buttonsBlock);
