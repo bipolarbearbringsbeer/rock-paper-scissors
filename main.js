@@ -3,9 +3,10 @@ const variation = ["rock", "paper", "scissors"];
 function playGame() {
     let userScore = 0;
     let computerScore = 0;
-    let roundCounter = 0;
 
-    function playRound(humanChoice, computerChoice) {
+    function playRound(humanChoice) {
+        let computerChoice = getComputerChoice();
+
         if (computerChoice === humanChoice) {
             console.log("It's draw!!! No one is winner! 🤔");
         }
@@ -21,15 +22,6 @@ function playGame() {
             console.log(`Computer chose ${computerChoice}, you chose ${humanChoice}. You win, whatever 😞`);
             userScore += 1;
         }
-    }
-
-    while (roundCounter < 5) {
-        const userSelection = getUserChoice();
-        const computerSelection = getComputerChoice();
-
-        playRound(userSelection, computerSelection);
-
-        roundCounter += 1;
     }
 
     printResult(userScore, computerScore);
