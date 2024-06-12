@@ -12,6 +12,8 @@ const scissorsButton = document.createElement("button");
 const scoreBlock = document.createElement("div");
 const userScoreParagraph = document.createElement("p");
 const computerScoreParagraph = document.createElement("p");
+const roundResult = document.createElement("p");
+const finalResult = document.createElement("p");
 
 buttonsBlock.classList.add("buttons-block");
 scoreBlock.classList.add("score-block");
@@ -40,22 +42,30 @@ function playRound(humanChoice) {
     let computerChoice = getComputerChoice();
 
     if (computerChoice === humanChoice) {
-        console.log("It's draw!!! No one is winner! 🤔");
+        roundResult.textContent = "It's draw!!! No one is winner! 🤔";
+        body.append(roundResult);
     }
     else if (
         (computerChoice === "rock" && humanChoice === "scissors") ||
         (computerChoice === "paper" && humanChoice === "rock") ||
         (computerChoice === "scissors" && humanChoice === "paper")
     ) {
-        console.log(`Computer chose ${computerChoice}, you chose ${humanChoice} and lose round! He-he-he 🤣`);
+        roundResult.textContent = `Computer chose ${computerChoice}, you chose ${humanChoice} and lose round! He-he-he 🤣`;
+        body.append(roundResult);
         computerScore += 1;
     }
     else {
-        console.log(`Computer chose ${computerChoice}, you chose ${humanChoice}. You win, whatever 😞`);
+        roundResult.textContent = `Computer chose ${computerChoice}, you chose ${humanChoice}. You win, whatever 😞`;
+        body.append(roundResult);
         userScore += 1;
     }
     userScoreParagraph.textContent = `User Score: ${userScore}`;
     computerScoreParagraph.textContent = `Computer Score: ${computerScore}`;
+
+    if (userScore == 5) {
+
+    }
+
     console.log(userScore, computerScore);
 }
 
