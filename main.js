@@ -62,11 +62,19 @@ function playRound(humanChoice) {
     userScoreParagraph.textContent = `User Score: ${userScore}`;
     computerScoreParagraph.textContent = `Computer Score: ${computerScore}`;
 
-    if (userScore == 5) {
-
+    if (userScore === 5) {
+        finalResult.textContent = "Sadly admit it but you win. 🙁";
+        finalResult.style.cssText = "color: #fe50a1; font-size: 22px; font-weight: bold;";
+        body.append(finalResult);
+        disableButtons();
+    }
+    else if (computerScore === 5) {
+        finalResult.textContent = "Hooray! I won! Mua-ha-ha-ha, loser! 🥳";
+        finalResult.style.cssText = "color: #39c3df; font-size: 22px; font-weight: bold;";
+        body.append(finalResult);
+        disableButtons();
     }
 
-    console.log(userScore, computerScore);
 }
 
 function getComputerChoice() {
@@ -76,16 +84,8 @@ function getComputerChoice() {
     return computerChoice;
 }
 
-function printResult(userScore, computerScore) {
-    if (userScore > computerScore) {
-        console.log(`Your score is ${userScore} and mine is ${computerScore}. Well, that means you got lucky 😩`);
-    }
-    else if (userScore < computerScore) {
-        console.log(`Your score is ${userScore} and mine is ${computerScore}. Look at you, crying baby! I am always winner!!! 🤣`);
-    }
-    else {
-        console.log(`Your score is ${userScore} and mine is ${computerScore}. Hmmm, you're as good as me 🤔 🤖`);
-    }
+function disableButtons() {
+    rockButton.disabled = true;
+    paperButton.disabled = true;
+    scissorsButton.disabled = true;
 }
-
-// playGame();
