@@ -34,22 +34,22 @@ function getComputerChoice() {
     return computerChoice;
 }
 
-function getUserChoice() {
-    let wrongInput = true;
+// function getUserChoice() {
+//     let wrongInput = true;
 
-    // Check for right user input
-    while (wrongInput) {
-        let userChoice = prompt("Choose rock, paper or scissors: ").toLowerCase();
+//     // Check for right user input
+//     while (wrongInput) {
+//         let userChoice = prompt("Choose rock, paper or scissors: ").toLowerCase();
 
-        if (
-            userChoice === "rock" ||
-            userChoice === "paper" ||
-            userChoice === "scissors"
-        ) {
-            return userChoice;
-        }
-    }
-}
+//         if (
+//             userChoice === "rock" ||
+//             userChoice === "paper" ||
+//             userChoice === "scissors"
+//         ) {
+//             return userChoice;
+//         }
+//     }
+// }
 
 function printResult(userScore, computerScore) {
     if (userScore > computerScore) {
@@ -64,3 +64,17 @@ function printResult(userScore, computerScore) {
 }
 
 playGame();
+
+// UI implementation
+const body = document.querySelector("body");
+const buttonsBlock = document.createElement("div");
+const rockButton = document.createElement("button");
+const paperButton = document.createElement("button");
+const scissorsButton = document.createElement("button");
+
+rockButton.textContent = "Rock";
+paperButton.textContent = "Paper";
+scissorsButton.textContent = "Scissors";
+
+buttonsBlock.append(rockButton, paperButton, scissorsButton);
+body.append(buttonsBlock);
